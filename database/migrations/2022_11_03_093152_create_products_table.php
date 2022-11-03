@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('details');
             $table->string('description');
             $table->text('product_code');
-            $table->string('image')->default('default/no_image.jp');
+            $table->string('image')->default('default/no_image.jpg');
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('quantity');
             $table->timestamps();
