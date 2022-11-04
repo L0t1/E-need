@@ -5,26 +5,23 @@
             <div class="flex flex-col justify-around items-center absolute inset-0">
                 <span class="text-white text-xl">Lorem ipsum dolor sit amet.</span>
                 <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                   <Link href="#" class="text-md justify-center inline-flex
-                    items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md
-                    font-semibold text-white uppercase tracking-widest hover:bg-gray-700
-                    active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring
-                    focus:ring-gray-300 transition">Womens</Link>
-                    <Link href="#" class="text-md justify-center inline-flex
-                    items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md
-                    font-semibold text-white uppercase tracking-widest hover:bg-gray-700
-                    active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring
-                    focus:ring-gray-300 transition">Mens</Link>
-                    <Link href="#" class="text-md justify-center inline-flex
-                    items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md
-                    font-semibold text-white uppercase tracking-widest hover:bg-gray-700
-                    active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring
-                    focus:ring-gray-300 transition">Kids</Link>
-                    <Link href="#" class="text-md justify-center inline-flex
-                    items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md
-                    font-semibold text-white uppercase tracking-widest hover:bg-gray-700
-                    active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring
-                    focus:ring-gray-300 transition">Home Goods</Link>
+                        <gray-button as="href" href="#" class="text-md">
+                            Womens
+                        </gray-button>
+
+                        <gray-button as="href" href="#" class="text-md">
+                            Mens
+                        </gray-button>
+
+                        <gray-button as="href" href="#" class="text-md">
+                            Kids
+                        </gray-button>
+
+                        <gray-button as="href" href="#" class="text-md">
+                            Home Goods
+                        </gray-button>
+
+                   
                 </div>
             </div>
         </div>
@@ -80,6 +77,7 @@
 import { defineComponent} from 'vue';
 import { Link } from '@inertiajs/inertia-vue3';
 import AppLayout from '../Layouts/AppLayout.vue'
+import GrayButton from '@/Components/Buttons/GrayButton.vue'
 
 
 
@@ -89,6 +87,7 @@ export default defineComponent({
     components: {
     Link,
     AppLayout,
+    GrayButton,
 },
 })
 </script>

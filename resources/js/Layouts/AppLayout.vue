@@ -2,6 +2,7 @@
 import { defineComponent, ref } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
 import  Nav  from '@/Components/Nav.vue'
+import  Footer  from '@/Components/Footer.vue'
 
 export default defineComponent({
     props:{
@@ -10,6 +11,7 @@ export default defineComponent({
     components:{
         Head,
         Nav,
+        Footer,
     }
 });
 </script>
@@ -32,13 +34,7 @@ export default defineComponent({
             <main>
                 <slot></slot>
             </main>
-            <footer class="text-center text-white bg-gray-700 px-4 py-4">
-                <div>
-                    <p>     
-                        Lorem ipsum dolor sit amet.                
-                    </p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     </div>
 </template>
