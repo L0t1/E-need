@@ -5,23 +5,9 @@
             <div class="flex flex-col justify-around items-center absolute inset-0">
                 <span class="text-white text-xl">Lorem ipsum dolor sit amet.</span>
                 <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                        <gray-button as="href" href="#" class="text-md">
-                            Womens
-                        </gray-button>
-
-                        <gray-button as="href" href="#" class="text-md">
-                            Mens
-                        </gray-button>
-
-                        <gray-button as="href" href="#" class="text-md">
-                            Kids
-                        </gray-button>
-
-                        <gray-button as="href" href="#" class="text-md">
-                            Home Goods
-                        </gray-button>
-
-                   
+                    <gray-button as="href" href="#" class="text-md" v-for="(category, index) in categories" :key="index">
+                        {{ category.name }}
+                    </gray-button>
                 </div>
             </div>
         </div>
@@ -83,7 +69,7 @@ import GrayButton from '@/Components/Buttons/GrayButton.vue'
 
 
 export default defineComponent({
-    props:['products'],
+    props:['products','categories'],
     components: {
     Link,
     AppLayout,
