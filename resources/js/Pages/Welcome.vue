@@ -15,39 +15,16 @@
             <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="flex flex-col max-w-7xl mx-auto px-4 sm:container sm:flex-row sm:space-x-4 sm:my-4 sm:px-6 lg:px-8">
-            <Link href="#" class="flex flex-col w-full h-full mb-4">
+            <Link href="#" class="flex flex-col w-full h-full mb-4" v-for="
+                (feat, index) in featured" :key="index">
                 <div class="text-center text-white bg-gray-700 py-2">
                     <span>
-                        asdasfasf
+                        {{ feat.name }}
                     </span>
                 </div>
-                <img :src="'/storage/images/defaults/no_image.jpg'" alt="#" class="h-72 object-cover md:w-72 lg:w-96">
+                <img :src="'storage/images/'+feat.image" :alt="feat.name" class="h-72 object-cover md:w-72 lg:w-96">
             </Link>
-            <Link href="#" class="flex flex-col w-full h-full mb-4">
-                <div class="text-center text-white bg-gray-700 py-2">
-                    <span>
-                        asdasfasf
-                    </span>
-                </div>
-                <img :src="'/storage/images/defaults/no_image.jpg'" alt="#" class="h-72 object-cover md:w-72 lg:w-96">
-            </Link>
-            <Link href="#" class="flex flex-col w-full h-full mb-4">
-                <div class="text-center text-white bg-gray-700 py-2">
-                    <span>
-                        asdasfasf
-                    </span>
-                </div>
-                <img :src="'/storage/images/defaults/no_image.jpg'" alt="#" class="h-72 object-cover md:w-72 lg:w-96">
-            </Link>
-            <Link href="#" class="flex flex-col w-full h-full mb-4">
-                <div class="text-center text-white bg-gray-700 py-2">
-                    <span>
-                        asdasfasf
-                    </span>
-                </div>
-                <img :src="'/storage/images/defaults/no_image.jpg'" alt="#" class="h-72 object-cover md:w-72 lg:w-96">
-            </Link>
-            
+           
         </div>
         <div class="text-center text-white bg-black px-4 py-4">
             <p class="container">
@@ -69,7 +46,7 @@ import GrayButton from '@/Components/Buttons/GrayButton.vue'
 
 
 export default defineComponent({
-    props:['products','categories'],
+    props:['featured','categories'],
     components: {
     Link,
     AppLayout,

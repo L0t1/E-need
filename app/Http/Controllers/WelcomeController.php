@@ -18,13 +18,14 @@ class WelcomeController extends Controller
     {
         $categories = Category::take(4)->inRandomOrder()->get(['name',
         'slug']);
+        $featured = Product::take(4)->inRandomOrder()->get(['name', 'slug', 'image']);
         return Inertia::render('Welcome',[
             'categories' => $categories,
-            'products' =>Product::all()
+            'featured' => $featured,
         ]);
     }
 
-    /**
+    /** 
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
