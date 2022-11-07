@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class WelcomeController extends Controller
-{
+class ShopController extends Controller
+{ 
     /**
      * Display a listing of the resource.
      *
@@ -16,16 +15,12 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $categories = Category::take(4)->inRandomOrder()->get(['name',
-        'slug']);
-        $featured = Product::where('image', '!=', 'defaults/no_image.jpg')->take(4)->inRandomOrder()->get(['name', 'slug', 'image']);
-        return Inertia::render('Welcome',[
-            'categories' => $categories,
-            'featured' => $featured,
+        return Inertia::render('Shop/Index',[
+            'products' => Product::all(),
         ]);
     }
 
-    /** 
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WelcomeController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -19,6 +19,9 @@ use Inertia\Inertia;
 
 Route::get('/',[WelcomeController::class, 'index'])->name('welcome');
 
+//SHOP
+Route::get('/shop',[ShopController::class,'index'])->name('shop.index');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -28,3 +31,4 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
