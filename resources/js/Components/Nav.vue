@@ -66,7 +66,7 @@ const logout = () => {
                         </Link>
 
                         </template>
-                        <Link href="/shop"
+                        <Link :href="route('shop.index')"
                         class="hover:text-yellow-500
                         transition">
                             Shop
