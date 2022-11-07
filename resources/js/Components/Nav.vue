@@ -66,7 +66,7 @@ const logout = () => {
                         </Link>
 
                         </template>
-                        <Link href="#"
+                        <Link href="/shop"
                         class="hover:text-yellow-500
                         transition">
                             Shop

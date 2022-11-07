@@ -1,16 +1,12 @@
 <template>
-    <app-layout>
-        <header class="text-gray-7-- bg-gray-300 shadow">
-            <div class="flex justify-between items-center max-w-7xl
-            mx-auto py-2 px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center leading-tight">
-                <Link :href="route('welcome')" class="text-gray-700
-                transition hover:text-yellow-500">Home</Link>
-            </div>
-            <div class="w-1/2">
-            </div>
-        </div>
-        </header>
+    <app-layout :title="`Shop ${ categoryName }`">
+        <secondary-header>
+            <template #breadcrumbs>
+                <icon name="angle-right" class="w-4 h-4 fill-current"></icon>
+                <span>Shop {{categoryName}}</span>
+            </template>
+        </secondary-header>
+       
         <div class="flex">
             <div class="border-r w-1/5">
                 <div>
@@ -45,13 +41,15 @@
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
     import { Link } from '@inertiajs/inertia-vue3';
+    import SecondaryHeader from '@/Components/SecondaryHeader.vue'
 
 
     export default defineComponent({
-        props: ['products','categories'],
+        props: ['products','categories','categoryName'],
         components: {
         AppLayout,
          Link,
+         SecondaryHeader,
 
 },
     })
